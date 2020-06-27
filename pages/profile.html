@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/profile.css" />
+  </head>
+
+  <body>
+    <div class="body-container">
+      <nav class="navbar">
+        <a href="#">NomeDoSite</a>
+        <!-- CART -->
+        <button class="btn btn-cart">
+          <svg
+            width="27"
+            height="25"
+            viewBox="0 0 27 25"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M17.6442 11.75L12.8992 4.64332C12.6933 4.33999 12.3467 4.18832 12 4.18832C11.6533 4.18832 11.3067 4.33999 11.1008 4.65416L6.35584 11.75H1.16668C0.570843 11.75 0.0833435 12.2375 0.0833435 12.8333C0.0833435 12.9308 0.0941768 13.0283 0.126677 13.1258L2.87834 23.1683C3.12751 24.0783 3.96168 24.75 4.95834 24.75H19.0417C20.0383 24.75 20.8725 24.0783 21.1325 23.1683L23.8842 13.1258L23.9167 12.8333C23.9167 12.2375 23.4292 11.75 22.8333 11.75H17.6442ZM8.75001 11.75L12 6.98332L15.25 11.75H8.75001ZM12 20.4167C10.8083 20.4167 9.83334 19.4417 9.83334 18.25C9.83334 17.0583 10.8083 16.0833 12 16.0833C13.1917 16.0833 14.1667 17.0583 14.1667 18.25C14.1667 19.4417 13.1917 20.4167 12 20.4167Z"
+            />
+            <rect
+              id="btn-badge"
+              x="15"
+              y="1"
+              width="11"
+              height="11"
+              rx="5.5"
+              stroke="url(#paint0_linear)"
+              stroke-width="2"
+            />
+            <defs>
+              <linearGradient
+                id="paint0_linear"
+                x1="27.1874"
+                y1="-4.94056"
+                x2="13.9695"
+                y2="-4.94056"
+                gradientUnits="userSpaceOnUse"
+              >
+                <stop stop-color="#FAF4E5" />
+                <stop offset="1" stop-color="white" />
+              </linearGradient>
+            </defs>
+          </svg>
+        </button>
+        <!-- MENU -->
+        <button class="btn btn-menu">
+          <svg
+            width="29"
+            height="20"
+            viewBox="0 0 29 20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M0 2C0 0.89543 0.89543 0 2 0L27 0C28.1046 0 29 0.89543 29 2C29 3.10457 28.1046 4 27 4H2C0.89543 4 0 3.10457 0 2Z"
+            />
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M0 10C0 8.89543 0.89543 8 2 8H27C28.1046 8 29 8.89543 29 10C29 11.1046 28.1046 12 27 12H2C0.89543 12 0 11.1046 0 10Z"
+            />
+            <path
+              fill-rule="evenodd"
+              clip-rule="evenodd"
+              d="M0 18C0 16.8954 0.89543 16 2 16H27C28.1046 16 29 16.8954 29 18C29 19.1046 28.1046 20 27 20H2C0.89543 20 0 19.1046 0 18Z"
+            />
+          </svg>
+        </button>
+      </nav>
+
+        <div class="main-container">
+
+          <img src="../images/profile.svg" width="150px">
+
+          <h1>Atualização <span>de Perfil</span></h1>
+          
+          <form onSubmit="">
+
+            <div class="fields-container">
+
+              <div class="field-container">
+                <label>Nome</label>
+                <input type="text" placeholder="Seu Nome" />
+              </div>
+              <div class="field-container">
+                <label>Email</label>
+                <input type="text" placeholder="seu@email.com.br" />
+              </div>
+              <div class="field-container">
+                <label>Senha Atual</label>
+                <input type="password" placeholder="********" />
+              </div>
+              <div class="linebreak-container"></div>
+              <div class="field-container">
+                <label>Senha Nova</label>
+                <input type="password" placeholder="********" />
+              </div>
+              <div class="field-container">
+                <label>Confirme sua senha nova</label>
+                <input type="password" placeholder="********" />
+              </div>
+              
+              <button class="btn-text-accent">Atualizar</button>
+            </div>
+            
+          </form>
+        </div>
+      <footer>NomeDoSite - 2020</footer>
+    </div>
+  </body>
+  </html>
+</html>

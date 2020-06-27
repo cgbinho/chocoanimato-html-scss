@@ -1,0 +1,37 @@
+@import "../modules/index";
+@import "../partials/index";
+@import "../modules/index";
+@import "../partials/index";
+
+.main-container {
+  h1 {
+    @include title-setting(2.8em, 1.3em);
+  }
+
+  a {
+    @include text-setting("base");
+    justify-self: center;
+    text-decoration: none;
+    transition: all 0.3s ease 0s;
+    color: color(primary);
+    margin-top: 0.6em;
+
+    &:hover {
+      color: color-light(primary, 20%);
+    }
+  }
+}
+
+.line-container {
+  display: grid;
+  grid-template-columns: 1fr 20% 1fr;
+  align-items: center;
+  text-align: center;
+  margin-top: 0.5em;
+
+  &:before,
+  &:after {
+    content: "";
+    border-bottom: 1px solid color(secondary);
+  }
+}

@@ -1,0 +1,48 @@
+@import "../modules/index";
+@import "../partials/index";
+
+.order-wrapper {
+  display: grid;
+  grid-auto-flow: row;
+  justify-content: center;
+  justify-self: center;
+  align-self: center;
+  text-align: center;
+  padding: 1em;
+  grid-gap: 0.5em;
+  max-width: 450px;
+
+  img {
+    justify-self: center;
+    margin-bottom: 1em;
+  }
+
+  strong {
+    font-weight: strong;
+  }
+
+  h1 {
+    @include title-setting(2.8em, 3.6em);
+    // margin-top: 0.5em;
+  }
+
+  button {
+    height: 3em;
+    margin-top: 1em;
+  }
+}
+
+.boleto-container {
+  display: grid;
+
+  a {
+    display: grid;
+    grid-auto-flow: row;
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+
+  img {
+    padding-left: 2em;
+  }
+}

@@ -1,0 +1,71 @@
+/* Color Variables */
+$colors: (
+  primary: #694633,
+  secondary: #d6cfb8,
+  text-accent: #eddda4,
+  button-accent: rgb(0, 85, 255),
+  bg: #f6f3e9
+);
+
+$gradients: (
+  accent-light: rgba(42, 175, 204, 0.85),
+  accent-dark: map-get($colors, button-accent)
+);
+
+@mixin inset-box-shadow() {
+  border-radius: 0.5em;
+  border: solid color-light(bg, 20%) 1px;
+  background: color-light(bg, 4%);
+  box-shadow: inset 0px 1px 2px #e2dcc8, inset 2px 1px 3px #d5cbb1,
+    inset 3px 6px 3px #e7d9c3, inset -6px -3px 5px rgba(255, 255, 255, 0.750601);
+}
+
+@mixin btn-box-shadow() {
+  box-shadow: 4px 4px 12px rgba(210, 193, 176, 1),
+    -6px 0px 8px rgba(244, 248, 251, 1),
+    -11px -11px 8px rgba(246, 251, 255, 0.5),
+    -6px -6px 8px rgba(255, 255, 255, 0.5);
+}
+
+@mixin btn-box-shadow--activated() {
+  box-shadow: 2px 2px 6px rgba(210, 193, 176, 1),
+    -8px 0px 8px rgba(244, 248, 251, 1), -8px -8px 17px rgba(246, 251, 255, 0.5),
+    -4px -4px 13px rgba(255, 255, 255, 0.5);
+}
+
+/* Color Functions */
+@function color($color-name) {
+  @return map-get($colors, $color-name);
+}
+
+@function color-light($color-name, $value) {
+  @return lighten(map-get($colors, $color-name), $value);
+}
+
+@function color-dark($color-name, $value) {
+  @return darken(map-get($colors, $color-name), $value);
+}
+
+/* Gradient Functions */
+@function gradient($gradient-name1, $gradient-name2) {
+  @return linear-gradient(
+    0.6turn,
+    map-get($gradients, $gradient-name1) 0%,
+    map-get($gradients, $gradient-name2) 100%
+  );
+}
+
+@function gradient-light($gradient-name1, $gradient-name2, $value) {
+  @return linear-gradient(
+    0.6turn,
+    lighten(map-get($gradients, $gradient-name1), $value) 0%,
+    lighten(map-get($gradients, $gradient-name2), $value) 100%
+  );
+}
+@function gradient-dark($gradient-name1, $gradient-name2) {
+  @return linear-gradient(
+    0.6turn,
+    darken(map-get($gradients, $gradient-name1), 5%) 0%,
+    darken(map-get($gradients, $gradient-name2), 5%) 100%
+  );
+}

@@ -1,0 +1,21 @@
+.body-wrapper {
+  display: -ms-grid;
+  display: grid;
+}
+
+.body-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(350px, max-content))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(350px, -webkit-max-content));
+      grid-template-columns: repeat(auto-fit, minmax(350px, max-content));
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.item {
+  background-color: aquamarine;
+  width: 420px;
+}
+/*# sourceMappingURL=grid-center.css.map */

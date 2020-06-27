@@ -1,0 +1,29 @@
+@import "../modules/index";
+@import "../partials/index";
+
+.main-container {
+  h1 {
+    @include title-setting(4.5em, 0em);
+  }
+
+  a {
+    @include text-setting("base");
+    justify-self: end;
+    text-decoration: none;
+    transition: all 0.3s ease 0s;
+    color: color(primary);
+    margin-top: 0.6em;
+
+    &:hover {
+      color: color-light(primary, 20%);
+    }
+  }
+}
+
+.linebreak-container {
+  width: 100%;
+  height: 1px;
+  background-color: color(secondary);
+  margin-top: 0.7em;
+  margin-bottom: 0.7em;
+}

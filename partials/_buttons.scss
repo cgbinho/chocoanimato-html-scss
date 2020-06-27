@@ -1,0 +1,273 @@
+/* Botão menu */
+.btn-text {
+  cursor: pointer;
+  @include text-setting("base");
+  color: color(primary);
+  padding: 0.3em 0.6em;
+  background: color(bg);
+  border: solid color-light(bg, 20%) 1px;
+  border-radius: 0.5em;
+  @include btn-box-shadow();
+
+  &:active {
+    @include btn-box-shadow--activated();
+    transform: translateY(2px);
+    transition: all 0.2s ease 0s;
+  }
+}
+
+/*  Button svg  */
+.btn {
+  cursor: pointer;
+  color: color(primary);
+  padding: 0.4em 0.4em;
+  border: solid color-light(bg, 20%) 1px;
+  background: color(bg);
+  border-radius: 0.5em;
+  @include text-setting("base");
+  @include btn-box-shadow();
+
+  svg {
+    display: block;
+    margin: auto;
+    fill: color(primary);
+    transition: all 0.2s ease 0s;
+  }
+
+  /*  botão acende um pouco */
+  &:hover {
+    svg {
+      display: block;
+      margin: auto;
+      fill: color-light(primary, 20%);
+      transition: all 0.2s ease 0s;
+    }
+  }
+
+  /*  active: botão abaixa um pouco */
+  &:active {
+    @include btn-box-shadow--activated();
+    transform: translateY(2px);
+    transition: all 0.2s ease 0s;
+  }
+}
+
+.btn-toggle {
+  border: solid color-light(bg, 20%) 2px;
+  box-shadow: 8px 2px 20px rgba(105, 183, 255, 0.4);
+  background-image: gradient(accent-light, accent-dark);
+}
+
+/* ajustes para o botao cart */
+.btn-cart {
+  svg {
+    padding: 0.1em 0.1em;
+  }
+}
+
+/* ajustes para o botao menu */
+.btn-menu {
+  svg {
+    display: block;
+    margin: auto;
+  }
+}
+
+.btn-back {
+  svg {
+    padding: 0.1em 0.1em;
+    // display: block;
+    // margin: auto;
+  }
+}
+
+.btn-boleto {
+  padding: 1.2em;
+  // display: block;
+  // margin: auto;
+}
+
+/* Botão de chamado de ação  */
+.btn-text-accent {
+  cursor: pointer;
+  @include text-setting("base");
+  color: white;
+  padding: 0.3em 0.6em;
+  background: color(bg);
+  border: none;
+  // border: solid color-light(bg, 20%) 1px;
+  border-radius: 0.5em;
+  box-shadow: 8px 2px 20px rgba(105, 183, 255, 0.4);
+  background-image: gradient(accent-light, accent-dark);
+  transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
+
+  &:hover {
+    background-image: gradient-light(accent-light, accent-dark, 4%);
+  }
+
+  &:active {
+    transform: translateY(2px);
+    transition: all 0.2s ease 0s;
+  }
+}
+
+#btn-badge {
+  visibility: visible;
+  fill: color(button-accent);
+  stroke: color(bg);
+}
+
+#btn-badge--invisible {
+  visibility: hidden;
+}
+
+.btn--round {
+  border-radius: 50%;
+}
+
+.btn--online {
+  background: color(button-accent);
+}
+
+.btn-svg {
+  // width: auto;
+
+  svg {
+    // display: block;
+    // margin: auto;
+    fill: color(primary);
+    transition: all 0.2s ease 0s;
+
+    rect {
+      stroke: color(bg);
+    }
+  }
+
+  /*  botão acende um pouco */
+  &:hover {
+    svg {
+      // display: block;
+      // margin: auto;
+      fill: color-light(primary, 20%);
+      transition: all 0.2s ease 0s;
+    }
+  }
+
+  /*  active: botão abaixa um pouco */
+  &:active {
+    // display: block;
+    // margin: auto;
+    transform: translateY(2px);
+    transition: all 0.2s ease 0s;
+  }
+}
+
+/* Checkbox Button */
+.checkbox-container {
+  cursor: pointer;
+  display: block;
+  position: relative;
+  padding-left: 2.5em;
+  user-select: none;
+
+  input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+
+  input:checked ~ .checkbox-checkmark {
+    // border: none;
+    border: solid color-light(bg, 20%) 2px;
+    background-image: gradient(accent-light, accent-dark);
+  }
+
+  input:checked ~ .checkbox-checkmark:after {
+    display: block;
+  }
+
+  .checkbox-checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    border-radius: 8px;
+    background-color: color(bg);
+
+    &:after {
+      content: "";
+      position: absolute;
+      display: none;
+    }
+
+    &:after {
+      left: 7px;
+      top: 2px;
+      width: 5px;
+      height: 12px;
+      border: solid white;
+      border-width: 0 2px 2px 0;
+      transition: all 0.2s ease 0s;
+      transform: rotate(45deg);
+    }
+  }
+}
+
+/* Radio Button */
+.radio-container {
+  cursor: pointer;
+  display: block;
+  position: relative;
+  padding-left: 2.5em;
+  user-select: none;
+
+  input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+
+  input:checked ~ .radio-checkmark {
+    // border: none;
+    border: solid color-light(bg, 20%) 2px;
+    background-image: gradient(accent-light, accent-dark);
+  }
+
+  input:checked ~ .radio-checkmark:after {
+    display: block;
+  }
+
+  .radio-checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    background-color: color(bg);
+
+    &:after {
+      content: "";
+      position: absolute;
+      display: none;
+    }
+
+    &:after {
+      left: 7px;
+      top: 7px;
+      width: 7px;
+      height: 7px;
+      // border: solid white;
+      border-radius: 50%;
+      background: white;
+      // border-width: 0 2px 2px 0;
+      // transition: all 0.2s ease 0s;
+      // transform: rotate(45deg);
+    }
+  }
+}

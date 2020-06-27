@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,aAAa,CAAC;EACZ,OAAO,EAAE,IAAI;CAEd;;AACD,AAAA,eAAe,CAAC;EACd,OAAO,EAAE,IAAI;EACb,qBAAqB,EAAE,4CAA4C;EACnE,eAAe,EAAE,MAAM;CACxB;;AACD,AAAA,KAAK,CAAC;EACJ,gBAAgB,EAAE,UAAU;EAC5B,KAAK,EAAE,KAAK;CACb",
+    "sources": [
+        "../scss/ref/grid-center.scss"
+    ],
+    "names": [],
+    "file": "grid-center.css"
+}

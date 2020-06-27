@@ -1,0 +1,8 @@
+@import "../modules/index";
+@import "../partials/index";
+
+.main-container {
+  h1 {
+    @include title-setting(3.5em, 1em);
+  }
+}

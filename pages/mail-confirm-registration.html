@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NomeDoSite</title>
+  </head>
+
+  <body>
+    <div
+      style="
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 16px;
+        line-height: 1.6;
+        color: #222;
+        max-width: 600px;
+      "
+    >
+      <ul>
+        <strong>Olá, {{ user }}!</strong>
+        <h4>Só mais um passo para começar a criar os seus vídeos!😃</h4>
+        <p>
+          Confirme seu cadastro acessando o link abaixo: <br />
+          <a href="{{confirmation_link}}">{{confirmation_link}}</a>
+        </p>
+        <!-- <em>(Você será redirecionado para a página de login do site)</em> -->
+
+        <p>
+          Atenciosamente, <br />
+          <b>Cleber Galves Bordin</b>
+        </p>
+      </ul>
+
+      <br />
+    </div>
+  </body>
+</html>

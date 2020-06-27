@@ -1,0 +1,61 @@
+@import "../modules/index";
+@import "../partials/index";
+
+.page-title-orders-history {
+  @include title-setting(3.4em, 0.6em);
+  margin-top: 0.5em;
+}
+
+.order-history-items-container {
+  display: grid;
+
+  @media (min-width: 700px) {
+  }
+}
+
+.order-history-item-container {
+  display: grid;
+  grid-auto-flow: row;
+  grid-gap: 1em;
+  padding: 1em;
+  margin-top: 0.5em;
+  background-color: color(bg);
+  border: solid color-light(bg, 20%) 1px;
+  border-radius: 0em;
+  @include btn-box-shadow();
+
+  p {
+    @include text-setting("sm");
+    line-height: 1.75rem;
+    span {
+      font-weight: bold;
+    }
+  }
+
+  @media (min-width: 700px) {
+    justify-self: center;
+    max-width: 450px;
+    border-radius: 0.75em;
+  }
+
+  header {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    grid-gap: 1em;
+  }
+
+  section,
+  main {
+    text-align: center;
+  }
+
+  img {
+    width: 100px;
+  }
+
+  button {
+    margin-top: 0.75em;
+    height: 3em;
+    width: 100%;
+  }
+}

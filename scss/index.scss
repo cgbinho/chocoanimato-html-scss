@@ -1,0 +1,33 @@
+@import "../modules/index";
+@import "../partials/index";
+
+.main-container {
+  h1 {
+    @include title-setting(150px, 60px);
+    // margin-left: 1rem;
+    // padding-left: 1rem;
+    // padding-right: 1rem;
+  }
+
+  p {
+    @include text-setting("base");
+    text-align: center;
+    // line-height: 160%;
+  }
+
+  button {
+    margin: auto;
+    width: 90%;
+    max-width: 450px;
+    height: 3em;
+  }
+
+  img {
+    margin: auto;
+    margin-bottom: 3em;
+    margin-top: 2em;
+    width: 80vw;
+    // min-width: 300px;
+    max-width: 750px;
+  }
+}

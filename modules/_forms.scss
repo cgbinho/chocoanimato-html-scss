@@ -1,0 +1,88 @@
+/* Input */
+
+@mixin input-setting() {
+  height: 2.8em;
+  text-indent: 1rem;
+  border-radius: 0.5em;
+  border: solid color-light(bg, 20%) 1px;
+  color: color(primary);
+  @include inset-box-shadow();
+  // background: color-light(bg, 4%);
+  // box-shadow: inset 0px 1px 2px #e2dcc8, inset 2px 1px 3px #d5cbb1,
+  //   inset 3px 6px 3px #e7d9c3, inset -6px -3px 5px rgba(255, 255, 255, 0.750601);
+
+  &::placeholder {
+    color: color-light(primary, 10%);
+    font-size: 0.9rem;
+    // font-style: italic;
+  }
+  // Muda a cor enquando digita
+  &:focus {
+    color: color-light(primary, 20%);
+  }
+}
+
+@mixin select-setting() {
+  // grid-area: "select";
+  // width: 60vw;
+  height: 3em;
+  //width: 180px;
+  // max-width: 550px;
+  text-indent: 0.5em;
+  font-weight: bold;
+  @include text-setting("sm");
+  text-align: left;
+  border-radius: 0.5em;
+  border: solid color-light(bg, 20%) 1px;
+  color: color(primary);
+  background: #f6f3e9 url("../images/select-caret.svg") no-repeat;
+  background-position: right 15px top 50%;
+  box-shadow: 4px 4px 12px rgba(210, 193, 176, 0.727846);
+  appearance: none;
+
+  &:focus {
+    outline: 0;
+    appearance: none;
+    background: #f6f3e9 url("../images/select-caret.svg") no-repeat;
+    background-position: right 15px top 50%;
+  }
+}
+
+/* Select com bolinha azul: */
+// @mixin select-setting() {
+//   // grid-area: "select";
+//   // width: 60vw;
+//   height: 2.5em;
+//   //width: 180px;
+//   // max-width: 550px;
+//   text-indent: 1em;
+//   text-align: left;
+//   border-radius: 2em;
+//   border: solid color-light(bg, 20%) 1px;
+//   color: color(primary);
+//   background: #f6f3e9 url("../images/dropdown_active.svg") no-repeat;
+//   box-shadow: 4px 4px 12px rgba(210, 193, 176, 0.727846);
+//   appearance: none;
+//   background-position: right 0px top 50%;
+//   // transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
+
+//   &:focus {
+//     outline: 0;
+//     appearance: none;
+//     background: #f6f3e9 url("../images/dropdown.svg") no-repeat;
+//     background-position: right 0px top 50%;
+//     // background-position: rotateZ(180deg);
+//   }
+
+//   &:focus-within {
+//     background: #f6f3e9 url("../images/dropdown.svg") no-repeat;
+//     background-position: right 0px top 50%;
+//     // background: black;
+//   }
+//   &::selection {
+//     background: #f6f3e9 url("../images/dropdown.svg") no-repeat;
+//     background-position: right 0px top 50%;
+//   }
+// }
+
+// @mixin radio-setting(){}

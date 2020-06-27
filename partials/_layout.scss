@@ -1,0 +1,138 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Propriedade do Next? */
+/* #__next {
+  height: 100%;
+  width: 100%;
+} */
+
+body,
+html {
+  overflow-x: hidden;
+  height: 100%;
+}
+
+body {
+  font-family: $main-font;
+  font-size: 18px;
+  color: color(primary);
+  background-color: color(bg);
+}
+
+.body-container {
+  display: grid;
+  min-height: 100%;
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: 100%;
+  align-items: start;
+}
+
+@mixin responsive-container() {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  justify-content: center;
+  @media (min-width: 700px) {
+    grid-template-columns: repeat(auto-fit, minmax(350px, min-content));
+  }
+}
+
+.main-container {
+  display: grid;
+  grid-auto-flow: row;
+  justify-content: center;
+  align-self: center;
+  color: color(primary);
+
+  img {
+    justify-self: center;
+  }
+}
+
+/* Deprecate depois de instalar no react */
+.navbar {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  grid-gap: 1.2em 1.5em;
+  align-items: center;
+  min-height: 70px;
+  padding: 0 1.4em 0 1.4em;
+  transition: all 0.2s ease 0s;
+}
+
+a {
+  text-decoration: none;
+  transition: all 0.3s ease 0s;
+  color: color(primary);
+  font-weight: normal;
+
+  &:hover {
+    color: color-light(primary, 20%);
+  }
+}
+
+footer {
+  color: color(primary);
+  @include text-setting("xs");
+  text-align: center;
+  align-self: center;
+  margin: 1em;
+}
+
+/* Form fields: */
+.fields-container {
+  display: grid;
+  padding: 0 1em;
+  grid-gap: 0.5em;
+  width: 90vw;
+  max-width: 350px;
+
+  button {
+    margin-top: 0.5em;
+    height: 3em;
+  }
+}
+
+.field-container {
+  display: grid;
+  grid-auto-flow: row;
+
+  label {
+    padding-bottom: 0.2em;
+  }
+
+  input {
+    @include input-setting();
+  }
+
+  select {
+    @include select-setting();
+  }
+}
+
+.fieldgroup-container {
+  display: grid;
+  grid-gap: 1em;
+
+  @media (min-width: 600px) {
+    grid-auto-flow: column;
+    grid-gap: 1em;
+  }
+}
+
+.pagination-container {
+  display: grid;
+  grid-auto-flow: column;
+  padding: 1em;
+  grid-gap: 1em;
+  max-width: max-content;
+  justify-self: center;
+
+  button {
+    height: 3em;
+    padding: 0 3.2em;
+  }
+}

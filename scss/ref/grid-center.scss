@@ -1,0 +1,13 @@
+.body-wrapper {
+  display: grid;
+  // grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+}
+.body-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, max-content));
+  justify-content: center;
+}
+.item {
+  background-color: aquamarine;
+  width: 420px;
+}

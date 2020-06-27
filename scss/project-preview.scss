@@ -1,0 +1,200 @@
+@import "../modules/index";
+@import "../partials/index";
+
+.page-title {
+  @include title-setting(4em, 0.6em);
+  margin-top: 0.5em;
+}
+
+.project-preview-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  justify-content: center;
+
+  @media (min-width: 700px) {
+    grid-template-columns: repeat(auto-fit, minmax(550px, min-content));
+  }
+  // grid-gap: 1em;
+  padding-top: 1em;
+}
+
+.body-wrapper {
+  display: grid;
+}
+
+.template-card {
+  display: grid;
+  grid-template-rows: min-content;
+  margin: 1em;
+  font-size: 0.8em;
+  background-color: color(bg);
+  border: solid color-light(bg, 20%) 1px;
+  border-radius: 0.75em;
+  @include btn-box-shadow();
+  // box-shadow: 4px 4px 12px rgba(210, 193, 176, 1),
+  //   -11px 0px 11px rgba(244, 248, 251, 1),
+  //   -11px -11px 29px rgba(246, 251, 255, 0.5),
+  //   -6px -6px 26px rgba(255, 255, 255, 0.5);
+
+  .template-card--video-preview {
+    width: 100%;
+    height: 200px;
+    // justify-self: center;
+    border-top-left-radius: 0.75em;
+    border-top-right-radius: 0.75em;
+    background-color: white;
+  }
+
+  .progress_container {
+    position: relative;
+    border-top-left-radius: 0.75em;
+    border-top-right-radius: 0.75em;
+    background-color: color-light(secondary, 5%);
+
+    span {
+      display: block;
+      padding-top: 100px;
+      height: 250px;
+      text-align: center;
+      // font-family: sans-serif;
+    }
+  }
+
+  .progress_bar {
+    border-top-left-radius: 0.75em;
+    border-top-right-radius: 0.75em;
+    width: 50%;
+    height: 250px;
+    margin-top: -250px;
+    background-image: gradient(accent-light, accent-dark);
+
+    span {
+      color: white;
+      width: 100%;
+      position: absolute;
+      // -webkit-clip-path: polygon(0 0, $progress-percent 0, $progress-percent 100%, 0% 100%);
+      clip-path: polygon(0 0, 50% 0, 50% 100%, 0% 100%);
+    }
+  }
+
+  .loading_preview {
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    width: 100%;
+    height: 280px;
+    border-top-left-radius: 0.75em;
+    border-top-right-radius: 0.75em;
+    background-image: gradient(accent-light, accent-dark);
+    background-color: color-light(secondary, 5%);
+
+    p {
+      color: white;
+      text-align: center;
+    }
+  }
+
+  h1 {
+    // padding: 0 0.6em 0 0.6em;
+    @include text-setting("lg");
+  }
+
+  .template-card--title {
+    display: grid;
+    grid-gap: 0.5em;
+    padding: 1em;
+
+    h1 {
+      // padding: 0.6em;
+      font-size: 1.25rem;
+      line-height: 1.5rem;
+    }
+  }
+
+  .template-card--information {
+    display: grid;
+    grid-gap: 0.7em;
+    padding: 1em;
+    margin-top: auto;
+
+    button {
+      margin-top: 0.5em;
+      // margin-top: 0em;
+      // width: 100%;
+      height: 3em;
+    }
+  }
+
+  .template-card--mode {
+    display: grid;
+    grid-template-columns: 1fr 2.2em 2em;
+
+    p {
+      grid-column: 3;
+      grid-row: 1;
+      align-self: center;
+      justify-self: end;
+    }
+
+    label {
+      align-self: center;
+      justify-self: start;
+    }
+
+    svg {
+      grid-column: 2;
+      grid-row: 1;
+      justify-self: center;
+      align-self: center;
+      justify-content: space-between;
+    }
+  }
+
+  .template-card--duration {
+    display: grid;
+    grid-template-columns: 1fr 2.2em 2em;
+
+    p {
+      grid-column: 3;
+      grid-row: 1;
+      align-self: center;
+      justify-self: end;
+    }
+
+    label {
+      align-self: center;
+      justify-self: start;
+    }
+
+    svg {
+      grid-column: 2;
+      grid-row: 1;
+      justify-self: center;
+      align-self: center;
+      justify-content: space-between;
+    }
+  }
+
+  .template-card--price {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    label {
+      align-self: center;
+      justify-self: start;
+    }
+
+    svg {
+      justify-self: end;
+      align-self: center;
+      justify-content: space-between;
+    }
+
+    p {
+      @include text-setting("lg");
+      font-weight: bold;
+      align-self: center;
+      justify-self: end;
+    }
+  }
+}

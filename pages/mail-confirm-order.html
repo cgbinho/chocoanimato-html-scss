@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NomeDoSite</title>
+  </head>
+
+  <body>
+    <div
+      style="
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 16px;
+        line-height: 1.6;
+        color: #222;
+        max-width: 600px;
+      "
+    >
+      <ul>
+        <strong>Olá, {{ user }}!</strong>
+        <h4>Seu pedido foi enviado com sucesso!🙌</h4>
+        <p>
+          Código do Pedido: <b>'{{order.reference}}'</b> <br />
+          <em>Realizado em {{order.createdAt}}</em> <br />
+        </p>
+        <h4>Status</h4>
+        ✔️
+        <b>Pedido enviado</b>
+        <br />
+        ⏳
+        <em><b>Aguardando Pagamento</b></em>
+        <br />
+        Pagamento Aprovado
+        <br />
+        Download disponível
+      </ul>
+      <ul>
+        <h4>Descrição dos itens:</h4>
+        {{#each projects}}
+        <p>
+          <strong>🎞️Vídeo: {{this.name}}</strong> <br />
+          Descrição: <i>{{this.description}}</i> <br />
+          Duração: <i>{{this.duration}}s</i> | Proporção: <i>{{this.ratio}}</i>
+          <br />
+          Valor: <i>{{this.price}}</i> <br />
+        </p>
+        {{/each}}
+      </ul>
+
+      <ul>
+        <h4>Resumo do Pedido</h4>
+        <p>
+          Método de Pagamento: {{order.payment_method}} <br />
+          Total: <i>{{subtotal}}</i> <br />
+          Desconto: <i>{{extra_amount}}</i> <br />
+          Total: <i>{{total}}</i> <br />
+          Número de Parcelas: <i>{{order.installment_count}}</i>
+        </p>
+      </ul>
+
+      {{! Se o paymentMethod for 'Boleto', exibir o payment_link: }} {{#if_eq
+      payment_method 'Boleto'}}
+      <ul>
+        <h4>Link para o boleto bancário</h4>
+        <p>
+          <a href="{{payment_link}}">{{payment_link}}</a>
+        </p>
+      </ul>
+      {{/if}}
+
+      <ul>
+        <h4>Status do pedido</h4>
+        <p>
+          {{#if is_multiple_videos}} Estamos processando o seu pagamento e
+          convertendo os seus vídeos! <br />
+          <b>Eles estarão disponíveis para download em breve!</b>
+          {{else}} Estamos processando o seu pagamento e convertendo o seu
+          vídeo!
+          <b>Ele estará disponível para download em breve!</b> {{/if}}
+        </p>
+        <p>
+          Você será informado pelo email e seu pedido estará disponível na
+          sessão 'Histórico de pedidos' do site.
+        </p>
+        <p>
+          <a href="{{orders_history_link}}">{{orders_history_link}}</a>
+        </p>
+
+        <p>
+          Atenciosamente, <br />
+          <b>Cleber Galves Bordin</b>
+        </p>
+      </ul>
+
+      <br />
+    </div>
+  </body>
+</html>

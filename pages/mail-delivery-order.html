@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NomeDoSite</title>
+  </head>
+
+  <body>
+    <div
+      style="
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 16px;
+        line-height: 1.6;
+        color: #222;
+        max-width: 600px;
+      "
+    >
+    <ul>
+      <strong>Olá, {{ user }}!</strong>
+      {{#if is_multiple_videos}}
+      <h4>Seus vídeos estão prontos para download!✔️</h4>
+      {{else}}
+      <h4>Seu vídeo está pronto para download!✔️</h4>
+      {{/if}}
+      <p>
+        Código do Pedido: <b>'{{order.reference}}'</b> <br />
+        <em>Realizado em {{order.createdAt}}</em> <br />
+      </p>
+      <h4>Status</h4>
+      ✔️<b>Pedido enviado</b>
+      <br />
+      ✔️<b>Aguardando Pagamento</b>
+      <br />
+      ✔️ <b>Pagamento Aprovado</b>
+      <br />
+      ✔️<b><em>Download disponível</em></b>
+      </ul>
+
+    <ul>
+      <h4>Descrição dos itens:</h4>
+      {{#each projects}}
+      <p><strong>🎞️Vídeo: {{this.name}}</strong> <br />
+        Descrição: <i>{{this.description}}</i> <br />
+        Duração: <i>{{this.duration}}s</i> | Proporção: <i>{{this.ratio}}</i> <br />
+        Valor: <i>{{this.price}}</i> <br />
+      </p>
+      {{/each}}
+    </ul>
+    
+    <ul>
+      <h4>Resumo do Pedido</h4>
+      <p>Método de Pagamento: {{order.payment_method}} <br />
+        Total: <i>{{subtotal}}</i> <br />
+        Desconto: <i>{{extra_amount}}</i>  <br />
+        Total: <i>{{total}}</i>  <br />
+        Número de Parcelas: <i>{{order.installment_count}}</i> 
+      </p>
+    </ul>
+    
+    <ul>
+      <p>
+        Acesse o histórico de pedidos e faça seu download <b>imediatamente!</b> </p>
+        <h4>Atenção: Os links dos arquivos <strong style="color:red;">expiram em 7 dias</strong>, portanto faça o download em um lugar seguro de seu computador.</h4>
+        <a href="{{orders_history_link}}">{{orders_history_link}}</a>
+      </p>
+      
+      <p>
+        Atenciosamente, <br />
+        <b>Cleber Galves Bordin</b>
+      </p>
+    </ul>
+    
+    <br />
+  </div>
+</body>
+</html>

@@ -1,0 +1,94 @@
+/* Fonts */
+@import url("https://fonts.googleapis.com/css?family=Lato:400,700&display=swap");
+
+/* Variables */
+$main-font: "Lato", sans-serif;
+$font-size: 18px;
+$base-font-size: 1rem;
+$base-line-height: 1.25 * $base-font-size;
+
+/* Functions */
+@function text-scale($level) {
+  @return map-get(map-get($text-settings, $level), "font-size");
+}
+
+@function line-height($level) {
+  @return map-get(map-get($text-settings, $level), "line-height");
+}
+
+@mixin title-setting($span-width, $span-margin) {
+  @include text-setting("xxl");
+  margin-bottom: 1em;
+  margin-top: 1em;
+  font-style: normal;
+  font-weight: bold;
+  line-height: 145%;
+  text-align: center;
+
+  span {
+    position: relative;
+    z-index: 1;
+  }
+
+  span::before {
+    content: "";
+    position: absolute;
+    width: $span-width;
+    height: 0.5em;
+    bottom: 0;
+    background: color(text-accent);
+    z-index: -1;
+    margin-left: $span-margin;
+    // margin-left: 0.6em;
+    border-radius: 1rem;
+  }
+}
+
+@mixin text-setting($level) {
+  font-size: text-scale($level);
+  line-height: line-height($level);
+}
+/* 
+Como usar:
+.selector {
+  @include text-setting('xs');
+}
+ */
+
+$text-settings: (
+  "xs": (
+    font-size: 0.75rem,
+    // 12px
+      line-height: $base-line-height
+  ),
+  "sm": (
+    font-size: 0.875rem,
+    // 14px
+      line-height: $base-line-height
+  ),
+  "base": (
+    font-size: 1rem,
+    // 16px
+      line-height: $base-line-height
+  ),
+  "md": (
+    font-size: 1.125rem,
+    // 18px
+      line-height: $base-line-height * 2
+  ),
+  "lg": (
+    font-size: 1.25rem,
+    // 20px
+      line-height: $base-line-height * 2
+  ),
+  "xl": (
+    font-size: 1.5rem,
+    // 24px
+      line-height: $base-line-height * 2
+  ),
+  "xxl": (
+    font-size: 1.75rem,
+    // 28px
+      line-height: $base-line-height * 2
+  )
+);
