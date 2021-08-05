@@ -1,3 +1,3 @@
-# frontend_html
+# Choco Animato Frontend HTML and CSS
 
-Choco Animato Html and Scss development.
+This is the Choco Animato html pages and css ( scss ) I created before jumping into Next.js to shape the pages and components.
